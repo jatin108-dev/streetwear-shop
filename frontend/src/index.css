@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 10px;
+}
+
+:root {
+  --primary: #7c3aed;
+  --secondary: #9333ea;
+}

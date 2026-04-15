@@ -32,6 +32,13 @@ export default function Signup() {
           className="w-full mb-3 p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-violet-500 outline-none text-white"
         />
 
+        {/* PHONE */}
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="w-full mb-3 p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-violet-500 outline-none text-white"
+        />
+
         {/* PASSWORD */}
         <input
           type="password"

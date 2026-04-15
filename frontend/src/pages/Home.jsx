@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import heroImg from "../assets/images/hero.png"
+import Hero from "../components/Hero";
+import Features from "../components/Features";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200">
@@ -7,59 +9,10 @@ export default function Home() {
       {/* <Navbar /> */}
 
       {/* HERO */}
-      <section className="px-6 md:px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-
-        {/* LEFT */}
-        <div className="max-w-2xl space-y-5">
-
-          <p className="text-gray-500 text-xs uppercase tracking-widest">
-            Latest Drop
-          </p>
-
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Streetwear That <br />
-            <span className="text-violet-400">Speaks for You</span>
-          </h1>
-
-          <p className="text-gray-400 text-sm md:text-base">
-            Elevated essentials built for modern everyday wear.
-          </p>
-
-          <button className="px-6 py-3 rounded-lg bg-violet-500 hover:bg-violet-400 transition text-white">
-            Shop Now
-          </button>
-
-        </div>
-
-        {/* RIGHT IMAGE */}
-<div className="w-full md:w-1/2 flex justify-center">
-  <img
-    src={heroImg}
-    alt="fashion"
-    className="w-full h-80 md:h-96 object-cover hover:scale-105 transition rounded-xl shadow-lg"
-  />
-</div>
-
-      </section>
+      <Hero/>
 
       {/* FEATURES */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 md:px-16 py-10">
-
-        {["Premium Fit", "Modern Look", "Street Ready"].map((item, i) => (
-          <div
-            key={i}
-            className="bg-gray-900 border border-gray-800 p-5 rounded-xl hover:border-violet-500 transition"
-          >
-            <h3 className="text-lg font-semibold text-violet-400">
-              {item}
-            </h3>
-            <p className="text-gray-400 text-sm mt-2">
-              Designed for modern fashion lovers.
-            </p>
-          </div>
-        ))}
-
-      </section>
+     <Features/>
 
 {/* SCROLL ARROW */}
 <div className="hidden md:flex justify-center absolute bottom-4 left-0 right-0">

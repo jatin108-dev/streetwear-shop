@@ -18,38 +18,38 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      setLoading(true);
+  //   try {
+  //     setLoading(true);
 
-      const res = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  //     const res = await fetch("http://localhost:5000/api/login", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      if (res.ok) {
-        const data = await res.json();
+  //     if (res.ok) {
+  //       const data = await res.json();
 
-        // ✅ TOKEN SAVE
-        localStorage.setItem("token", data.token);
+  //       // ✅ TOKEN SAVE
+  //       localStorage.setItem("token", data.token);
 
-        alert("Login successful");
-        navigate("/");
-      } else {
-        alert("Invalid credentials");
-      }
-    } catch (err) {
-      console.log(err);
-      alert("Error occurred");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //       alert("Login successful");
+  //       navigate("/");
+  //     } else {
+  //       alert("Invalid credentials");
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     alert("Error occurred");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black relative">
@@ -63,7 +63,7 @@ export default function Login() {
 
       {/* FORM */}
       <form
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
         className="relative z-10 w-full max-w-md bg-gray-900/80 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-xl"
       >
         <h2 className="text-2xl font-semibold text-white text-center mb-6">

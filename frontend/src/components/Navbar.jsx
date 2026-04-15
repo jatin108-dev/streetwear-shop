@@ -5,7 +5,7 @@ export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef();
 
-  // 🔥 outside click → close dropdown
+  //  outside click → close dropdown
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {

@@ -18,38 +18,34 @@ export default function Login() {
     });
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  //   try {
-  //     setLoading(true);
+  try {
+    setLoading(true);
 
-  //     const res = await fetch("http://localhost:5000/api/login", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
+    const res = await fetch("http://localhost:5000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include", // 🔥 IMPORTANT (cookie ke liye)
+      body: JSON.stringify(formData),
+    });
 
-  //     if (res.ok) {
-  //       const data = await res.json();
+    if (res.ok) {
+      // backend will set the cookie
 
-  //       // ✅ TOKEN SAVE
-  //       localStorage.setItem("token", data.token);
-
-  //       alert("Login successful");
-  //       navigate("/");
-  //     } else {
-  //       alert("Invalid credentials");
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //     alert("Error occurred");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+      navigate("/");
+    } else {
+      alert("Invalid credentials");
+    }
+  } catch (err) {
+    console.log(err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black relative">

@@ -7,8 +7,12 @@ const cookieParser = require('cookie-parser')
 const authRoutes = require('./routes/authRoutes')
 const connectDB = require("./config/db");
 
-// middleware
 const app = express()
+
+// DB connection
+connectDB()
+
+// middleware
 app.use(express.json())
 app.use(cookieParser())
 
@@ -23,7 +27,6 @@ app.use(cors(corsOptions))
 // ROUTES
 app.use("/api", authRoutes);
 
-connectDB()
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

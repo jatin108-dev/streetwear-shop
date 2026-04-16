@@ -11,7 +11,19 @@ const registering = async (req,res,next){
         if(userExists){
             return res.status(400).json({message: "User already exists"})
         }
+        // 2. Signup 
+        const userCreated = await User.create({
+            username,
+            email,
+            phone,
+            password,
+        })
+        res.status(201).json({
+            message:"Resgistration Successful",
+            userId: userCreated._id.toString()
+        })
     }catch(error){
-
+        console.error(error)
+        next(error) // error sent to middleware
     }
 }

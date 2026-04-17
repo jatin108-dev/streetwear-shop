@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -27,6 +29,14 @@ userSchema.pre('save',async function(next){
     }catch(error){
         next(err)
     }
+})
+
+userSchema.methods.generateToken(async function(){
+  return jwt.sign(
+    {id: this._id}, // Payload
+    "mysecretkey", // secret key
+    {expiresIn: "30d"}, // expiry
+  )
 })
 
 // Login Password Check
